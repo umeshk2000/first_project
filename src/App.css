@@ -1,25 +1,69 @@
-.Login{
-  margin: 2% 0 0 35%;
-  width: 30%;
-  height: 100 vh ;
-  display: flex;
-  justify-content: center ;
-  align-items: center;
-  position: fixed;
-}
-.btn{
-  border: none;
+/* form{
+  width: 50%;
+  margin: 2% ;
   width: 100%;
-  margin-top: 9px;
-  background-color: blue;
-  height: 29px;
-  border-radius: 7px;
+ 
+  */
+
+
+.login{
+ border: 2px solid black;
+}
+.lable_1{
+  top: -24px;
+    display: flex;
+    position: absolute;
+    left: 3px;
+    color: black;
+ 
+}
+.lable_2{
+  top: -24px;
+  display: flex;
+  position: absolute;
+  left: 170px;
+  color: black;
+  
+}
+
+.input{
+  width: 50%;
+
+ 
+}
+/* .form{
+  width: 100%;
+  height: auto;
+
+
+} */
+.spanhead{
+  display: flex;
+  justify-content: center;
+  text-align: center;
   font-weight: lighter;
-  color: white;
 }
-Form{
-  height: 100vh !important;
+/* h1{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+
+  
+} */
+.container{
+ 
+margin-top: 10%;
+ 
 }
-input:-internal-autofill-selected {
-  background-color: white !important;
+.Item{
+  
+  margin-bottom: 1px !important;
+  /* display: flex;
+  justify-content: center;
+  text-align: center; */
+ 
+}
+.Items{
+  margin-bottom: 5px !important;
 }

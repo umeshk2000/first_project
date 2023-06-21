@@ -1,32 +1,55 @@
 import React from "react";
-import { Form, Row, Col, Input } from 'antd';
+import {Button,  Col, Form, Input, Row , } from 'antd';
+import {Routes, Route, BrowserRouter,useNavigate} from 'react'
 
 
-const Login = ()=> {
+const onFinish = (values) => {
+  console.log('Success:', values);
+};
+const onFinishFailed = (errorInfo) => {
+  console.log('Failed:', errorInfo);
+};
+
+function Login(){
+  const navigate = useNavigate();
+
+  const navigateToLogin= () => {
+    // 👇️ navigate to /contacts
+    navigate('/contacts');
+  };
+return(
+  <>
+  <div className="container">
     
-    return(
-    <>
-      <div className="Login">
-      <Form  > 
-        <h1>Login</h1>
-      <h4 style={{textAlign:"center" , fontWeight:"lighter"}}>Please enter your email address and password to login </h4>  
-        <Row>
-            <label Col span={12}push={6} style={{marginTop:"2%"}}> Email</label>
-            <Input Col span={12}push={6} placeholder="Email" required></Input>
-            <label Col span={10}push={6} style={{marginTop:"2%"}}> Password</label>
-            <Input placeholder="Password" type="password" equired></Input>
-            <label Col span={10}push={6} style={{marginTop:"2%"}}>Conform Password</label>
-            <Input placeholder="Conform Password" type="password" equired></Input>  
-        </Row>
-        <Row>
-        <Col span={24}>
-      <button className="btn"  htmlType="submit">Login</button>
-        </Col>
-        </Row>  
-         <a href="">Forgot your password?</a>
-         </Form> 
-    </div>
-    </>
-    )
-}
-export default Login
+   
+    
+  <Form className="form" initialValues={{remember: true, }}onFinish={onFinish}  onFinishFailed={onFinishFailed} autoComplete="off" >
+  <Row>
+      <Col span={6}push={9}> <h1>Login</h1></Col></Row>
+  <span className="spanhead">Please enter your email address and password to login.</span>
+   <Form.Item className="Item"   wrapperCol={{ offset: 9, span: 12, }} name="Name"   rules={[ { required: true, message: 'Please input your username!', }, ]} >
+  
+      <Input className="input" placeholder="Name"></Input>
+   </Form.Item>
+   <Form.Item className="Item"  wrapperCol={{  offset:9 , span:12 ,   }}  name="Email"    rules={[ { required: true, message: 'Please input your Email!', }, ]} >
+      <Input className="input" placeholder="Email"></Input>
+      
+    </Form.Item>
+    <Row>
+      <Col span={6}push={9}>
+    <a >Forget your password ?</a>
+    </Col>
+    </Row>
+   
+    <Form.Item wrapperCol={{  offset: 9, span: 12,   }}>
+  
+      <Button  type="primary" htmlType="submit" onClick={navigateToLogin} >   Submit  </Button>
+       </Form.Item>
+
+  </Form>
+  
+  </div>
+  </>
+)
+  
+}export default Login
