@@ -1,6 +1,6 @@
 import React from "react";
 import {Button,  Col, Form, Input, Row , } from 'antd';
-import {Routes, Route, BrowserRouter,useNavigate} from 'react'
+
 
 
 const onFinish = (values) => {
@@ -11,12 +11,7 @@ const onFinishFailed = (errorInfo) => {
 };
 
 function Login(){
-  const navigate = useNavigate();
-
-  const navigateToLogin= () => {
-    // 👇️ navigate to /contacts
-    navigate('/contacts');
-  };
+ 
 return(
   <>
   <div className="container">
@@ -43,7 +38,7 @@ return(
    
     <Form.Item wrapperCol={{  offset: 9, span: 12,   }}>
   
-      <Button  type="primary" htmlType="submit" onClick={navigateToLogin} >   Submit  </Button>
+      <Button  type="primary" htmlType="submit"  >   Submit  </Button>
        </Form.Item>
 
   </Form>
